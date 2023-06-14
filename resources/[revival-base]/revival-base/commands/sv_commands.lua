@@ -241,9 +241,9 @@ RevivalCore.AddAdminCommand('setrank', 'developer', function(source, args, user)
 	local player = RevivalCore.Characters[target]
 	if target ~= nil then
 		if player then
-			if DBFramework.Ranks[rank] then
+			if RevivalFramework.Ranks[rank] then
 				player.setRank(rank)
-				TriggerClientEvent('notification', target, 'your rank was updated to: '..DBFramework.Ranks[rank].label)
+				TriggerClientEvent('notification', target, 'your rank was updated to: '..RevivalFramework.Ranks[rank].label)
 			else
 				TriggerClientEvent('notification', source, rank..' is not a valid rank')
 			end
@@ -260,10 +260,10 @@ RevivalCore.AddAdminCommand('setjob', 'admin', function(source, args, user)
 	local player = RevivalCore.Characters[id]
 	if id ~= nil then
 		if player then
-			if DBFramework.Jobs[job] then
-				if DBFramework.Jobs[job].grades[grade1] then
+			if RevivalFramework.Jobs[job] then
+				if RevivalFramework.Jobs[job].grades[grade1] then
 					player.setJob(job, grade1)
-					TriggerClientEvent('notification', id, 'Your Job has been set to: '..DBFramework.Jobs[job].Job..'('..DBFramework.Jobs[job].grades[grade1].grade..')')
+					TriggerClientEvent('notification', id, 'Your Job has been set to: '..RevivalFramework.Jobs[job].Job..'('..RevivalFramework.Jobs[job].grades[grade1].grade..')')
 				else
 					TriggerClientEvent('notification', source, 'Invaild Grade (' .. grade1 .. ')')
 				end

@@ -1,5 +1,5 @@
-DBFramework = {}
-DBFramework.Ranks = {
+RevivalFramework = {}
+RevivalFramework.Ranks = {
     ['user'] = {
         rank = 1,
         label = "user",
@@ -18,19 +18,19 @@ DBFramework.Ranks = {
     }
 }
 
-DBFramework.Bloodtypes = {"A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"}
+RevivalFramework.Bloodtypes = {"A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"}
 
-DBFramework.DefaultSettings = {
+RevivalFramework.DefaultSettings = {
     spawnPosition = {x = 195.08, y = -933.86, z = 29.7},
     startCash = 2500,
     startBank = 2500,
-    rank = DBFramework.Ranks['user']['label'],
+    rank = RevivalFramework.Ranks['user']['label'],
     job = {name = 'unemployed', label='Unemployed', grade = '', callsign = '', payment = 10, onduty = true, isBoss = false},
     secondaryJob = "none",
     gang = "none"
 }
 
-DBFramework.Jobs = {
+RevivalFramework.Jobs = {
     ['unemployed'] = {
         Job = 'unemployed',
         label = 'Unemployed',

@@ -144,7 +144,7 @@ RevivalCore.setRank = function(player, rank)
 	local src = player
 	local identifier = RevivalCore.Characters[src].identifier
 	local pCid = RevivalCore.Characters[src].cid
-	if DBFramework.Ranks[rank] then
+	if RevivalFramework.Ranks[rank] then
 		exports['revival_database']:execute('UPDATE characters SET rank = @rank WHERE identifier = @identifier AND cid = @cid', {
 			['@identifier'] = identifier,
 			['@cid'] = pCid,
@@ -336,7 +336,7 @@ end
 
 RevivalCore.HasPerms = function(source, r)
 	local _char = RevivalCore.Characters[source]
-	if _char.rank == r or DBFramework.Ranks[_char.rank].rank > DBFramework.Ranks[r].rank then
+	if _char.rank == r or RevivalFramework.Ranks[_char.rank].rank > RevivalFramework.Ranks[r].rank then
 		return true
 	end
 	return false

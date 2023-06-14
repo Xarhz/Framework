@@ -54,14 +54,14 @@ function SetCharacterData(source, cid, player)
         return JobData
     end
     self.setJob = function(job, grade)
-        if DBFramework.Jobs[job] ~= nil then
+        if RevivalFramework.Jobs[job] ~= nil then
             JobData.name = job;
-            JobData.label = DBFramework.Jobs[job].label;
-            JobData.grade = DBFramework.Jobs[job].grades[grade].grade;
-            JobData.isBoss = DBFramework.Jobs[job].grades[grade].isBoss or false;
-            JobData.onduty = DBFramework.Jobs[job].onduty ~= nil and DBFramework.Jobs[job].onduty or true
+            JobData.label = RevivalFramework.Jobs[job].label;
+            JobData.grade = RevivalFramework.Jobs[job].grades[grade].grade;
+            JobData.isBoss = RevivalFramework.Jobs[job].grades[grade].isBoss or false;
+            JobData.onduty = RevivalFramework.Jobs[job].onduty ~= nil and RevivalFramework.Jobs[job].onduty or true
             JobData.callsign = "None";
-            JobData.payment = DBFramework.Jobs[job].grades[grade].payment;
+            JobData.payment = RevivalFramework.Jobs[job].grades[grade].payment;
             AddLog(source, 'base', JobData.label..' Job Seted To '..self.name)
             exports['revival_database']:execute('UPDATE characters SET job = @job WHERE identifier = @identifier AND cid = @cid', {
                 ['@identifier'] = self.identifier,

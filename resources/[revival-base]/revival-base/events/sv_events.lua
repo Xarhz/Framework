@@ -81,7 +81,7 @@ AddEventHandler('revival-base:givepayment', function()
 		if _char ~= nil then
 			local amount = _char:job().payment
 			if _char then
-				if DBFramework.Jobs[_char:job().name] ~= nil then
+				if RevivalFramework.Jobs[_char:job().name] ~= nil then
 					_char.addMoney(amount, 'bank')
 					TriggerClientEvent('notification', src, 'You Get Your Payment : ' .. amount .. '$.',3)
 				end
