@@ -1,0 +1,1 @@
+RevivalCore = RevivalCore or {}
