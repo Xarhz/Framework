@@ -79,8 +79,10 @@ AddEventHandler('revival-multicharacters:createCharacter', function(cData)
     local src = source
     local steam = GetSteamID(src)
     local meta = { 
+        ["health"] = 100,
+        ["armour"] = 100,
         ["thirst"] = 100,
-        ["hunger"] = 100
+        ["hunger"] = 100, 
     }
     local saveCharacter = RevivalCore["SQL"]["execute"]('INSERT INTO characters (`identifier`, `name`, `cid`, `citizenid`, `cash`, `bank`, `banknumber`, `firstname`, `lastname`, `sex`, `twitter`, `dob`, `rank`, `job`, `secondaryJob`, `gang`, `position`, `phone`, `wallpaper`, `metaData`, `bloodtype`, `jail`) VALUES (@identifier, @name, @cid, @citizenid, @cash, @bank, @banknumber, @firstname, @lastname, @sex, @twitter, @dob, @rank, @job, @secondaryJob, @gang, @position, @phone, @wallpaper, @metaData, @bloodtype, @jail)', {
         ['identifier'] = steam,

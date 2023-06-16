@@ -31,8 +31,9 @@ RegisterNUICallback('spawn', function(data, cb)
     if SpawnLocation then
         CameraPos(SpawnLocation.x,SpawnLocation.y,SpawnLocation.z)
     end
-    SetEntityMaxHealth(PlayerPedId(), 200)
-    SetEntityHealth(PlayerPedId(), 200)
+    TriggerEvent("np-spawn:characterSpawned")
+    -- SetEntityMaxHealth(PlayerPedId(), 200)
+    -- SetEntityHealth(PlayerPedId(), 200)
     FreezeEntityPosition(PlayerPedId(), false)
 end)
 
